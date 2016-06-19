@@ -1,0 +1,7 @@
+<h1><%= @drink.name %></h1>
+<p>
+	<%= @drink.country %><br/>
+	<%= @drink.formatted_price %>
+</p>
+
+<%= link_to "Edit this drink", edit_drink_path %> | <%= link_to "Go back to list", drinks_path %>
