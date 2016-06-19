@@ -1,4 +1,6 @@
 class Drink < ActiveRecord::Base
+	has_many :bookmarks
+	has_many :users, through: :bookmarks
 	validates :name, :country, :price_in_cents, presence: true
 	validates :price_in_cents, numericality: {only_integer: true}
 
