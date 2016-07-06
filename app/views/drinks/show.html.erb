@@ -5,3 +5,5 @@
 </p>
 
 <%= link_to "Edit this drink", edit_drink_path %> | <%= link_to "Go back to list", drinks_path %> | <%= link_to "Delete", drink_path(@drink), method: :delete, data: {confirm: "Are you sure you want to delete this picture?"} %>
+
+<%= render 'bookmarks/form' %>

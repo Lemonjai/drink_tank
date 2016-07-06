@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-	before_action :load_drink
+  before_action :get_drink, only: [:create]
 
   def create
   	@bookmark = @drink.bookmarks.build
@@ -23,6 +23,6 @@ class BookmarksController < ApplicationController
 
   private
   def get_drink
-    @drink = Drink.find(params[:drink_id])
+    @drink = Drink.find(params[:event_id])
   end
 end

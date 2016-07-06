@@ -5,10 +5,7 @@ class DrinksController < ApplicationController
 
   def show
   	@drink = Drink.find(params[:id])
-
-    if current_user
-      @bookmark = @drink.bookmarks.build
-    end
+    @bookmark = @drink.bookmarks.build
   end
 
   def new
