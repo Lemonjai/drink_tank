@@ -7,22 +7,23 @@ class BookmarksController < ApplicationController
   	if @bookmark.save
   		redirect_to drink_path(@drink), notice: 'Bookmark created successfully'
   	else
-  		render 'drinks/show'
+      flash[:alert] = "Bookmark failed to save."
+  		redirect_to drink_path(@drink)
   	end
   end
 
   def destroy
   	@bookmark = Bookmark.find(params[:id])
   	if @bookmark.destroy
-      redirect_to drink_path(@drink), notice: "Bookmark deleted"
+      redirect_to user_path(current_user), notice: "Bookmark deleted"
     else
-      redirect_to drink_path(@drink)
+      redirect_to user_path(current_user)
       flash[:alert] = "Deleting bookmark failed"
     end
   end
 
   private
   def get_drink
-    @drink = Drink.find(params[:event_id])
+    @drink = Drink.find(params[:drink_id])
   end
 end

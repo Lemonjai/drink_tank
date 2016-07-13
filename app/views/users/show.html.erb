@@ -1,0 +1,13 @@
+<h1><%= @user.name %></h1>
+
+<p>
+	Email: <%= @user.email %>
+</p>
+<h2> Bookmarked Drinks </h2>
+<% current_user.bookmarks.each do |bookmark| %>
+	<% drink = bookmark.drink %>
+	<%= link_to drink.name,  drink_path(drink) %>
+	<%= button_to "Delete this bookmark", drink_bookmark_path(bookmark.drink, bookmark), :method => :delete %><br/>
+<% end %>
+
+<%= link_to "Return to main page", drinks_path %>

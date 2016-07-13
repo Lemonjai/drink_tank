@@ -44,6 +44,6 @@ class DrinksController < ApplicationController
 
   private
   def drink_params
-  	params.require(:drink).permit(:name, :country, :price_in_cents)
+  	params.require(:drink).permit(:name, :country, :price_in_cents, :option)
   end
 end

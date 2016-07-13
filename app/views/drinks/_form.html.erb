@@ -24,6 +24,12 @@
 		<%= f.number_field :price_in_cents %>
 	</p>
 	<p>
+		<%= f.radio_button(:option, "wine") %>
+		<%= f.label "Wine" %>
+		<%= f.radio_button(:option, "beer") %>
+		<%= f.label "Beer" %>
+	</p>
+	<p>
 		<%= f.submit %>
 	</p>
 <% end %>
